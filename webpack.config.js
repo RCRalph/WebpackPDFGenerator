@@ -8,10 +8,10 @@ const entry = process.env.npm_config_entry;
 module.exports = {
     mode: "production",
     entry: {
-        source: path.join(__dirname, entry)
+        source: path.resolve(__dirname, entry)
     },
     output: {
-        path: path.join(__dirname, path.dirname(entry), "dist")
+        path: path.resolve(__dirname, path.dirname(entry), "dist")
     },
     module: {
         rules: [
@@ -46,13 +46,13 @@ module.exports = {
                         page = await browser.newPage();
                     }
 
-                    const input = path.join(__dirname, path.dirname(entry), "dist/source.html"),
-                        output = path.join(__dirname, path.dirname(entry));
+                    const input = path.resolve(__dirname, path.dirname(entry), "dist/source.html"),
+                        output = path.resolve(__dirname, path.dirname(entry));
 
                     await page.goto("file://" + input, { waitUntil: "networkidle0" });
 
                     await page.pdf({
-                        path: path.join(output, path.basename(entry, path.extname(entry)) + ".pdf"),
+                        path: path.resolve(output, path.basename(entry, path.extname(entry)) + ".pdf"),
                         printBackground: true,
                         preferCSSPageSize: true,
                     });

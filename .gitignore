@@ -1,5 +1,1 @@
-*/
-!example
-!example/*
-*/dist
-*.pdf
+node_modules
