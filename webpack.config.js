@@ -11,7 +11,8 @@ module.exports = {
         source: path.resolve(__dirname, entry)
     },
     output: {
-        path: path.resolve(__dirname, path.dirname(entry), "dist")
+        path: path.resolve(__dirname, path.dirname(entry), "dist"),
+        assetModuleFilename: '[path][name].[ext]',
     },
     module: {
         rules: [
@@ -31,8 +32,8 @@ module.exports = {
                 loader: "css-loader",
             },
             {
-                test: /\.(woff|woff2|eot|tff|svg)$/,
-                loader: "file-loader",
+                test: /\.(woff|woff2|eot|tff|svg|png|jpg)$/,
+                type: "asset/resource",
             },
         ]
     },
@@ -62,4 +63,7 @@ module.exports = {
             }
         }
     ],
+    stats: {
+        warnings: false
+    }
 }
