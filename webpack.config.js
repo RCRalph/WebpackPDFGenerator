@@ -12,7 +12,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, path.dirname(entry), "dist"),
-        assetModuleFilename: '[path][name].[ext]',
+        assetModuleFilename: '[name].[ext]',
     },
     module: {
         rules: [
