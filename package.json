@@ -1,6 +1,6 @@
 {
   "name": "webpack-pdf-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "WebpackPDFGenerator is a Webpack-based PDF creator which uses Pug + SCSS as its source.",
   "bin": "main.js",
   "keywords": [
